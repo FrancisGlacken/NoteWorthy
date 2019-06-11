@@ -9,7 +9,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-@Database(entities = arrayOf(Note::class), version = 1)
+@Database(entities = arrayOf(Note::class), version = 2)
 public abstract class NoteDatabase : RoomDatabase() {
 
     abstract fun noteDao(): NoteDao
@@ -30,7 +30,7 @@ public abstract class NoteDatabase : RoomDatabase() {
                     context.applicationContext,
                     NoteDatabase::class.java,
                     "note_database"
-                ).addCallback(NoteDatabaseCallback(scope)).build()
+                ).fallbackToDestructiveMigration().addCallback(NoteDatabaseCallback(scope)).build()
                 INSTANCE = instance
                 return instance
             }
@@ -57,10 +57,10 @@ public abstract class NoteDatabase : RoomDatabase() {
 
             //Todo: Properly populate the db
 
-            var note = Note(1, "Hello")
-            noteDao.getAllNotes()
-            note = Note(2, "World!")
-            noteDao.getAllNotes()
+            var note = Note("Hello")
+//            noteDao.insert(note)
+            note = Note("World!")
+//            noteDao.insert(note)
         }
     }
 }

@@ -23,8 +23,8 @@ class NewNoteActivity : AppCompatActivity() {
             if (TextUtils.isEmpty(editNoteView.text)) {
                 setResult(Activity.RESULT_CANCELED, replyIntent)
             } else {
-                val word = editNoteView.text.toString()
-                replyIntent.putExtra(EXTRA_REPLY, word)
+                val noteString = editNoteView.text.toString()
+                replyIntent.putExtra(EXTRA_REPLY, noteString)
                 setResult(Activity.RESULT_OK, replyIntent)
             }
             finish()
