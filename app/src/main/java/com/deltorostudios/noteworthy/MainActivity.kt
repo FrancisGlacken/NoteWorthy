@@ -47,12 +47,15 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    // Inflate menu
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
 
+
+    // Menu items
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -63,6 +66,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Insert notes when code is requested?
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
