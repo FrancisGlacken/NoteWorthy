@@ -53,7 +53,7 @@ public abstract class NoteDatabase : RoomDatabase() {
         fun populateDatabase(noteDao: NoteDao) {
             // Start the app with a clean database every time.
             // Not needed if you only populate on creation.
-            noteDao.deleteAll()
+            //noteDao.deleteAll()
 
             //Todo: Properly populate the db
 
