@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var notes = emptyList<Note>() // Cached copy of words
-    private var onItemClick: ((Note) -> Unit)? = null
+    //private var onItemClick: ((Note) -> Unit)? = null
 
 
     // onCreateView method
@@ -44,9 +44,9 @@ class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adap
 
         init {
             itemView.setOnClickListener {
-                onItemClick?.invoke(notes[adapterPosition])
+                //onItemClick?.invoke(notes[adapterPosition])
                 val intent = Intent(itemView.context, NoteActivity::class.java)
-                intent.putExtra("key", 1)
+                intent.putExtra("key", "Long ass note")
                 itemView.context.startActivity(intent)
             }
         }

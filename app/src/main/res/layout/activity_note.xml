@@ -8,10 +8,11 @@
         android:background="@color/colorAccent">
 
     <TextView
+            android:id="@+id/note_activity_text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:background="@color/white"
-            android:text=""/>
+            android:text="Filler text"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
