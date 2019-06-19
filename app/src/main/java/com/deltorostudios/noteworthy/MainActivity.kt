@@ -72,8 +72,9 @@ class MainActivity : AppCompatActivity() {
 
         if (requestCode == newNoteActivityRequestCode && resultCode == Activity.RESULT_OK) {
             data?.let {
-                val newNote = Note(it.getStringExtra(NewNoteActivity.EXTRA_REPLY))
-                noteViewModel.insert(newNote)
+                val newNote = Note()
+                newNote.note = it.getStringExtra(NewNoteActivity.EXTRA_REPLY)
+                noteViewModel.insertNote(newNote)
             }
         } else {
             Toast.makeText(applicationContext, R.string.empty_not_saved, Toast.LENGTH_LONG).show()

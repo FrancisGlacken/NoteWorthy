@@ -26,6 +26,8 @@ class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adap
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val current = notes[position]
         holder.noteItemView.text = current.note
+        holder.currentNoteId = current.id
+        holder.currentNoteContent = current.note
     }
 
     // Set notes
@@ -41,12 +43,15 @@ class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adap
     // ViewHolder class
     inner class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val noteItemView: TextView = itemView.findViewById(R.id.noteContentView)
+        var currentNoteId: Long? = 0
+        var currentNoteContent: String = ""
 
         init {
             itemView.setOnClickListener {
                 //onItemClick?.invoke(notes[adapterPosition])
                 val intent = Intent(itemView.context, NoteActivity::class.java)
-                intent.putExtra("key", "Long ass note")
+                intent.putExtra("id_key", currentNoteId)
+                intent.putExtra("note_key", currentNoteContent)
                 itemView.context.startActivity(intent)
             }
         }
