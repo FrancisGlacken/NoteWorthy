@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var notes = emptyList<Note>() // Cached copy of words
-    private var onItemClick: ((Note) -> Unit)? = null
+    //private var onItemClick: ((Note) -> Unit)? = null
 
 
     // onCreateView method
@@ -26,6 +26,8 @@ class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adap
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val current = notes[position]
         holder.noteItemView.text = current.note
+        holder.currentNoteId = current.id
+        holder.currentNoteContent = current.note
     }
 
     // Set notes
@@ -41,12 +43,15 @@ class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adap
     // ViewHolder class
     inner class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val noteItemView: TextView = itemView.findViewById(R.id.noteContentView)
+        var currentNoteId: Long? = 0
+        var currentNoteContent: String = ""
 
         init {
             itemView.setOnClickListener {
-                onItemClick?.invoke(notes[adapterPosition])
+                //onItemClick?.invoke(notes[adapterPosition])
                 val intent = Intent(itemView.context, NoteActivity::class.java)
-                intent.putExtra("key", 1)
+                intent.putExtra("id_key", currentNoteId)
+                intent.putExtra("note_key", currentNoteContent)
                 itemView.context.startActivity(intent)
             }
         }

@@ -9,7 +9,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-@Database(entities = arrayOf(Note::class), version = 2)
+@Database(entities = arrayOf(Note::class), version = 3)
 public abstract class NoteDatabase : RoomDatabase() {
 
     abstract fun noteDao(): NoteDao
@@ -51,15 +51,13 @@ public abstract class NoteDatabase : RoomDatabase() {
 
 
         fun populateDatabase(noteDao: NoteDao) {
-            // Start the app with a clean database every time.
-            // Not needed if you only populate on creation.
-            //noteDao.deleteAll()
+//            // Start the app with a clean database every time.
+//            // Not needed if you only populate on creation.
+//            //noteDao.deleteAll()
 
-            //Todo: Properly populate the db
-
-            var note = Note("Hello")
+//            var note = Note("Hello")
 //            noteDao.insert(note)
-            note = Note("World!")
+//            note = Note("World!")
 //            noteDao.insert(note)
         }
     }
