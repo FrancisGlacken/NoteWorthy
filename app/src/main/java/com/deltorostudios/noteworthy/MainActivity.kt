@@ -14,6 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import kotlinx.android.synthetic.main.activity_main.*
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,8 +39,10 @@ class MainActivity : AppCompatActivity() {
 
         val recView = findViewById<RecyclerView>(R.id.rec_view)
         val adapter = NoteListAdapter(this)
+        val myLayoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        //myLayoutManager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS
         recView.adapter = adapter
-        recView.layoutManager = LinearLayoutManager(this)
+        recView.layoutManager = myLayoutManager
 
         noteViewModel = ViewModelProviders.of(this).get(NoteViewModel::class.java)
         noteViewModel.allNotes.observe(this, Observer { notes ->
