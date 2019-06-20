@@ -8,6 +8,7 @@
     <color name="red">#FF0000</color>
     <color name="green">#00FF00</color>
     <color name="blue">#0000FF</color>
+    <color name="transparent_green">#e2ffeb</color>
 
     <color name="buttonLabel">#d3d3d3</color>
 
