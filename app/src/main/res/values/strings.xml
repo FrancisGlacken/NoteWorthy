@@ -7,4 +7,5 @@
     <string name="empty_not_saved">Note not saved because it is empty.</string>
     <string name="save">Save</string>
     <string name="space"/>
+    <string name="delete">Delete</string>
 </resources>
