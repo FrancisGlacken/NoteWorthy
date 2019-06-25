@@ -8,4 +8,7 @@
     <string name="save">Save</string>
     <string name="space"/>
     <string name="delete">Delete</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
 </resources>

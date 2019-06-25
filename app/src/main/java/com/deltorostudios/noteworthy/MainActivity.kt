@@ -2,6 +2,7 @@ package com.deltorostudios.noteworthy
 
 import android.app.Activity
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,10 +28,30 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Use sharedPreferences to set the theme properly before view creation
+        val prefs = getSharedPreferences("my_prefs", MODE_PRIVATE)
+        val editor = getSharedPreferences("my_prefs", MODE_PRIVATE).edit()
+        val currentTheme = prefs.getInt("theme_key", 1)
+        when (currentTheme) {
+            1 -> {
+                setTheme(R.style.RedTheme)
+                editor.putInt("theme_key", 1)
+                editor.apply()
+            }
+            2 -> {
+                setTheme(R.style.GreenTheme)
+                editor.putInt("theme_key", 2)
+                editor.apply()
+            }
+            3 -> {
+                setTheme(R.style.BlueTheme)
+                editor.putInt("theme_key", 3)
+                editor.apply()
+            }
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
 
         fab.setOnClickListener { view ->
             val intent = Intent(this@MainActivity, NewNoteActivity::class.java)
@@ -52,6 +73,8 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+
+
     // Inflate menu
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -65,10 +88,36 @@ class MainActivity : AppCompatActivity() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
+        //TODO: Reuse the themes idea from punch clock, that shit worked good
+        val editor = getSharedPreferences("my_prefs", MODE_PRIVATE).edit()
+
+        when (item.itemId) {
+            R.id.action_red -> {
+                editor.putInt("theme_key", 1)
+                editor.apply()
+                finish()
+                val intent = intent
+                startActivity(intent)
+                return true
+            }
+            R.id.action_green -> {
+                editor.putInt("theme_key", 2)
+                editor.apply()
+                finish()
+                val intent = intent
+                startActivity(intent)
+                return true
+            }
+            R.id.action_blue -> {
+                editor.putInt("theme_key", 3)
+                editor.apply()
+                finish()
+                val intent = intent
+                startActivity(intent)
+                return true
+            }
         }
+        return super.onOptionsItemSelected(item)
     }
 
     // Insert notes when code is requested?

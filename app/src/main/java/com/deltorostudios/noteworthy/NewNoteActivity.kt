@@ -13,6 +13,14 @@ class NewNoteActivity : AppCompatActivity() {
     private lateinit var editNoteView: EditText
 
     public override fun onCreate(savedInstanceState: Bundle?) {
+        // Use sharedPreferences to set the theme properly before view creation
+        val prefs = getSharedPreferences("my_prefs", MODE_PRIVATE)
+        val currentTheme = prefs.getInt("theme_key", 1)
+        when (currentTheme) {
+            1 -> setTheme(R.style.RedTheme)
+            2 -> setTheme(R.style.GreenTheme)
+            3 -> setTheme(R.style.BlueTheme)
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_note)
         editNoteView = findViewById(R.id.edit_note)
