@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="noteColor" format="reference"/>
+    <attr name="backgroundColor" format="reference"/>
+    <attr name="windowColor" format="reference"/>
+</resources>

@@ -18,7 +18,7 @@
                 android:minHeight="60dp"
                 android:layout_margin="0dp"
                 android:padding="6dp"
-                android:background="@color/transparent_green"/>
+                android:background="?attr/noteColor"/>
 
 
 </androidx.cardview.widget.CardView>

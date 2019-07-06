@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="redColorPrimary">#FF4785</color>
-    <color name="redColorPrimaryDark">#00574B</color>
-    <color name="redColorAccent">#D81B60</color>
-
     <color name="white">#FFFFFF</color>
-
-    <color name="red">#FF0000</color>
-    <color name="green">#00FF00</color>
-    <color name="blue">#0000FF</color>
+    <color name="red">#E64444</color>
+    <color name="green">#4CAF50</color>
+    <color name="blue">#1A3EFF</color>
+    <color name="transparent_red">#FFE2E3</color>
     <color name="transparent_green">#e2ffeb</color>
-
+    <color name="transparent_blue">#E2F8FF</color>
+    <color name="background_red">#46441818</color>
+    <color name="background_green">#85276100</color>
+    <color name="background_blue">#86002B4D</color>
     <color name="buttonLabel">#d3d3d3</color>
 
 </resources>

@@ -3,12 +3,15 @@
     <!-- Base application theme. -->
     <style name="RedTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/redColorPrimary</item>
-        <item name="colorPrimaryDark">@color/redColorPrimaryDark</item>
-        <item name="colorAccent">@color/redColorAccent</item>
+        <item name="colorPrimary">@color/red</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        <item name="backgroundColor">@color/background_red</item>
+        <item name="noteColor">@color/transparent_red</item>
     </style>
+    <!--<item name="colorPrimaryDark">@color/white</item>-->
+    <!--<item name="colorAccent">@color/white</item>-->
 
     <style name="RedTheme.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -19,10 +22,11 @@
     <style name="GreenTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/green</item>
-        <item name="colorPrimaryDark">@color/redColorPrimaryDark</item>
-        <item name="colorAccent">@color/redColorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        <item name="backgroundColor">@color/background_green</item>
+        <item name="noteColor">@color/transparent_green</item>
     </style>
 
     <style name="GreenTheme.NoActionBar">
@@ -34,10 +38,11 @@
     <style name="BlueTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/blue</item>
-        <item name="colorPrimaryDark">@color/redColorPrimaryDark</item>
-        <item name="colorAccent">@color/redColorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        <item name="backgroundColor">@color/background_blue</item>
+        <item name="noteColor">@color/transparent_blue</item>
     </style>
 
     <style name="BlueTheme.NoActionBar">

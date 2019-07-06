@@ -11,14 +11,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/save"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
 
     <EditText
             android:id="@+id/note_activity_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/white"
+            android:background="?attr/noteColor"
             android:text="Filler text"
             app:layout_constraintTop_toBottomOf="@+id/note_save_button"/>
 
